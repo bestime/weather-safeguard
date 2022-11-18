@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" base-url="{% VITE_ROUTER_BASE %}" lang="en" author="{% author %}" build-date="{% buildDate %}">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/static/images/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/static/js/maptalks.min.js"></script>
+    <script src="/static/js/bestime/index.min.js?t={% buildTimestamp %}"></script>
+    <title>气象保障系统</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

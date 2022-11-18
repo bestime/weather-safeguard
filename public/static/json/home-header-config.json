@@ -1,0 +1,14 @@
+[
+  {
+    "name": "资料分析",
+    "routeName": "HOME_DATAANALYSIS"
+  },
+  {
+    "name": "气候统计",
+    "routeName": "HOME_CLIMATOLOGICALSTATISTICS"
+  },
+  {
+    "name": "产品制作",
+    "routeName": "HOME_PRODUCTMAKE"
+  }
+]

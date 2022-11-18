@@ -1,0 +1,85 @@
+[
+  {
+    "id": "a",
+    "name": "地基观测",
+    "iconName": "nav_01",
+    "children": [
+      {
+        "id": "a-1",
+        "name": "国家站",
+        "iconName": "nav_02"
+      },
+      {
+        "id": "a-2",
+        "name": "自动站",
+        "iconName": "nav_03"
+      }
+    ]
+  },
+  {
+    "id": "b",
+    "name": "模式预报",
+    "iconName": "nav_04",
+    "children": [
+      {
+        "id": "b-1",
+        "name": "EC",
+        "iconName": "nav_05"
+      },
+      {
+        "id": "b-2",
+        "name": "Grapes",
+        "iconName": "nav_06"
+      },
+      {
+        "id": "b-3",
+        "name": "精细模式",
+        "iconName": "nav_07"
+      }
+    ]
+  },
+  {
+    "id": "c",
+    "name": "雷达反射",
+    "iconName": "nav_08",
+    "children": [
+      {
+        "id": "c-1",
+        "name": "全国拼图",
+        "iconName": "nav_09"
+      },
+      {
+        "id": "c-2",
+        "name": "单站雷达",
+        "iconName": "nav_10"
+      },
+      {
+        "id": "c-3",
+        "name": "精细模式",
+        "iconName": "nav_11"
+      }
+    ]
+  },
+  {
+    "id": "d",
+    "name": "卫星云图",
+    "iconName": "nav_12",
+    "children": [
+      {
+        "id": "d-1",
+        "name": "风雨2号",
+        "iconName": "nav_13"
+      },
+      {
+        "id": "d-2",
+        "name": "葵花8号",
+        "iconName": "nav_14"
+      }
+    ]
+  },
+  {
+    "id": "e",
+    "name": "探空资料",
+    "iconName": "nav_15"
+  }
+]
