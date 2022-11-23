@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper.9903663a.js";import{o,y as r}from"./vue-vvp.ea4d0d78.js";const c={};function n(t,s){return o(),r("h1",null," \u6C14\u5019\u7EDF\u8BA1 ")}const f=e(c,[["render",n]]);export{f as default};

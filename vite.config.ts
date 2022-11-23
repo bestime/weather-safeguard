@@ -32,8 +32,10 @@ export default defineConfig(function ({ mode }) {
       assetsDir: 'build',
       rollupOptions: {
         manualChunks: {
-          'axios': ['axios'],
+          'vue-ad': ['axios', 'dayjs'],          
           'vue-vvp': ['vue', 'vue-router'],
+          'echarts': ['echarts'],
+          'swiper': ['swiper'],
         },
       }
     },

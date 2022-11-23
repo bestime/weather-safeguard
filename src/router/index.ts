@@ -13,6 +13,13 @@ export const routes: Array<RouteRecordRaw> = [
         path: 'DataAnalysis',
         name: 'HOME_DATAANALYSIS',
         component: () => import('@/views/Home/views/DataAnalysis/index.vue'), 
+        children: [
+          {
+            path: 'GBCountry',
+            name: 'HOME_DATAANALYSIS_GBCOUNTRY',
+            component: () => import('@/views/Home/views/DataAnalysis/views/GBCountry/index.vue'), 
+          }
+        ]
       },
       {
         path: 'ClimatologicalStatistics',

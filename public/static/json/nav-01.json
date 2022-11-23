@@ -5,9 +5,15 @@
     "iconName": "nav_01",
     "children": [
       {
-        "id": "a-1",
+        "id": "HOME_DATAANALYSIS_GBCOUNTRY",
         "name": "国家站",
-        "iconName": "nav_02"
+        "iconName": "nav_02",
+        "data": {
+          "name": "雷达拼图",
+          "element": "反射率",
+          "datetime": "2022-10-29",
+          "remark": "这是一个测试数据，我的内容可能比较多！内容少了不好测试！"
+        }
       },
       {
         "id": "a-2",

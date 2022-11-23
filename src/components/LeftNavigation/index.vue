@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, nextTick, watch } from "vue";
 import TreeNavgation from "./components/TreeNavgation/index.vue";
 
 
@@ -22,11 +22,13 @@ export interface LeftNavigationItem {
     | "nav_13"
     | "nav_14"
     | "nav_15"
-  children?: LeftNavigationItem[];
+  children?: LeftNavigationItem[],
+  data: any;
 }
 
 const emit = defineEmits<{
   (ev: 'update:modelValue', id: string): void
+  (ev: 'on-select', item: LeftNavigationItem): void
 }>()
 
 const props = defineProps<{
@@ -38,9 +40,19 @@ const paths = computed(function () {
   const chain = bestime.deepFindTreePath(props.data, function (item) {
     return item.id === props.modelValue
   })
+
+  
   return chain?.map(function (item) {
     return item.id
   }) || []
+})
+
+watch(function () {
+  return props.data
+}, function () {
+  selectDefault()
+}, {
+  immediate: true
 })
 
 // 如果不是最后一项，则找到最后一项返回
@@ -53,11 +65,20 @@ function getLastItem (item: LeftNavigationItem): LeftNavigationItem {
   return item
 }
 
+function selectDefault () {
+  // console.log("选择money")
+  const item = bestime.deepFindItem(props.data, function (dpi) {
+    return dpi.id === props.modelValue
+  })
+  item && onSelect(item)
+}
+
 function onSelect (item: LeftNavigationItem) {  
   item = getLastItem(item)
   // console.log("选中了", item)
   emit('update:modelValue', item.id)
-
+  emit('on-select', item)
+  
 }
 
 </script>

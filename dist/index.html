@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" base-url="./" lang="en" author="bestime" build-date="2022-11-18 18:52:10">
+<html lang="en" base-url="./" lang="en" author="bestime" build-date="2022-11-22 17:27:42">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./static/images/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./static/libs/element-plus/2.2.17/index.min.css" rel="stylesheet">
     <script src="./static/js/maptalks.min.js"></script>
-    <script src="./static/js/bestime/index.min.js?t=1668768730936"></script>
+    <script src="./static/libs/element-plus/2.2.17/locale/zh-cn.min.js"></script>
+    <script src="./static/js/bestime/index.min.js?t=1669109262719"></script>
     <title>气象保障系统</title>
     <style>
       body, html {
@@ -14,8 +16,31 @@
 
       }
     </style>
-    <script type="module" crossorigin src="./build/index.45b7089b.js"></script>
-    <link rel="modulepreload" crossorigin href="./build/vue-vvp.6c7df073.js">
+
+<script>
+  // 项目初始化配置
+  ;(function () {  
+    
+    var baseURL = './'
+  
+    // 第三方库配置
+    bestime.need.config({
+      'js#swiper': {
+        url: baseURL + 'static/libs/swiper/swiper-bundle.min.js',
+        moduleName: 'Swiper',
+        with: ['css#swiper'],
+      },
+      'css#swiper': {
+        url: baseURL + 'static/libs/swiper/swiper-bundle.min.css'
+      }
+    })        
+  })();
+  
+</script> 
+    <script type="module" crossorigin src="./build/index.ca8df050.js"></script>
+    <link rel="modulepreload" crossorigin href="./build/vue-vvp.ea4d0d78.js">
+    <link rel="modulepreload" crossorigin href="./build/vue-ad.681be7d6.js">
+    <link rel="stylesheet" href="./build/index.aa38c1f7.css">
   </head>
   <body>
     <div id="app"></div>

@@ -4,11 +4,11 @@
  * @author Bestime
  * @see https://github.com/bestime/tool
  */
- declare namespace bestime {
+declare namespace bestime {
   /**
    * 键值对格式的数据
    * */
-  type IKvPair = Record<string, any>;
+  export type IKvPair = Record<string, any>;
 
   /** 数据缓存工具提供的方法 */
   export interface IdataCacheCAllback {
@@ -650,4 +650,16 @@
     /** 销毁所有订阅 */
     dispose: () => void;
   };
+
+  /**
+   * 获取浏览器窗口尺寸
+   */
+  export function getWindowSize(): {
+    width: number
+    height: number
+  };
+  /**
+   * 获取随机颜色
+   */
+  export function randomColor(): string
 }

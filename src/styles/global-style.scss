@@ -1,0 +1,56 @@
+@import './scrollbar-theme-factory.scss';
+
+
+
+.g-sccrollbar-theme-01 {
+  &::-webkit-scrollbar,
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    // border-radius: 4px;
+    // overflow: hidden;
+    // outline: none;
+    // border: none;
+  }
+  &::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #787878;
+    background-image: linear-gradient(90deg,#787878,#575757);
+    box-shadow: 1px 0 1px rgba(255,255,255,0.4) inset;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  &::-webkit-scrollbar-track-piece,
+  ::-webkit-scrollbar-track-piece {
+    // border-radius: 4px;
+    background-color: #414141;
+    box-shadow: 0px 0 4px rgba(0,0,0,0.6) inset;
+    outline: none;
+    border: none;
+  }
+  
+  &::-webkit-scrollbar-corner,
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+}
+
+.g-sccrollbar-theme-02 {
+  @include scrollbar-theme-factory(#8bc6f7, #16375f, 6px);
+}
+
+.g-theme-element-plus-01 {
+  @import './theme-element-plus/01.scss';
+}
+
+//000
+.g-no-permission {
+  opacity: 0.2;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}

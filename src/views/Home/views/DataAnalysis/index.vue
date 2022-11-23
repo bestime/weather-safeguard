@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import BasicMap from '@/components/BasicMap/index.vue'
-import ColorControl, { ColorControlData } from '@/components/ColorControl/index.vue'
+
+
+
 import LeftNavigation, { LeftNavigationItem } from '@/components/LeftNavigation/index.vue'
 import { requestFileFromLocal } from "@/request";
+import { useRouter } from "vue-router";
+import { routes } from '@/router'
+import { ElNotification } from 'element-plus'
+const router = useRouter()
 
 const navConfig = ref<LeftNavigationItem[]>([])
 onMounted(async function () {
@@ -11,34 +16,36 @@ onMounted(async function () {
   console.log("导航", navConfig.value)
 })
 
-const currentTabId = ref('c-1')
+const currentTabId = ref('HOME_DATAANALYSIS_GBCOUNTRY')
+const activeItem = ref<LeftNavigationItem>()
 
-const colorList = ref<ColorControlData>([
-  {
-    start: 0,
-    end: 10,
-    name: '低级',
-    color: 'red'
-  },
-  {
-    start: 10,
-    end: 20,
-    name: '中级',
-    color: 'yellow'
-  },
-  {
-    start: 20,
-    end: 30,
-    name: '高级',
-    color: 'blue'
-  },
-  {
-    start: 30,
-    end: 40,
-    name: '特级',
-    color: 'pink'
+
+
+
+
+
+
+
+
+function onTabChange (item: LeftNavigationItem) {
+  console.log("改变了", item, navConfig)
+  const routeItem = bestime.deepFindItem(routes, function (ri) {
+    return ri.name === item.id
+  })
+  if(!routeItem) {
+    ElNotification.error(`${item.name}：未配置路由`)
+    router.push({
+      name: 'HOME_DATAANALYSIS'
+    })
+
+    return;
   }
-])
+  activeItem.value = bestime.cloneEasy(item)
+  
+  router.push({
+    name: item.id
+  })
+}
 
 </script>
 
@@ -47,10 +54,8 @@ const colorList = ref<ColorControlData>([
     <div style="position: absolute;right:10px;top:10px;z-index: 5;">
       <!-- <h1>你好：{{currentTabId}}</h1> -->
     </div>
-    
-    <BasicMap/>
-    <ColorControl :data="colorList"/>
-    <LeftNavigation :data="navConfig" v-model="currentTabId"/>
+    <RouterView :info="activeItem"/> 
+    <LeftNavigation :data="navConfig" v-model="currentTabId" @on-select="onTabChange"/>
   </div>
 </template>
 
@@ -58,20 +63,5 @@ const colorList = ref<ColorControlData>([
 .DataAnalysis { 
   flex: 1;
   position:relative;
-  .BasicMap {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-
-  }
-
-  .ColorControl {
-    position: absolute;    
-    right: 20px;
-    bottom: 20px;
-  }
 }
 </style>
