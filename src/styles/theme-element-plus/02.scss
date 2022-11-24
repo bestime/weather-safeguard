@@ -76,23 +76,22 @@
 }
 
 &.el-table {
-  background-color: white;
+  background-color: #0d2f5c;
   color: rgba(192, 203, 219, 1);
   th.el-table__cell {
-    background-color: rgba(239, 176, 0, 1);
-    color: black;
+    background-color: #143e70;
+    color: white;
   }
   tr,
   .el-table__body-wrapper tr td.el-table-fixed-column--right {
-    background-color: white;
-    color: black;
+    background-color: #0d2f5c;
     cursor: pointer;
   }
   &.el-table--striped
     .el-table__body
     tr.el-table__row--striped
     td.el-table__cell {
-    background-color: rgba(255, 243, 209, 1);
+    background-color: #133762;
   }
 
   .el-table__expand-icon {
@@ -116,16 +115,16 @@
   &:not(.el-table--border) {
     td.el-table__cell,
     th.el-table__cell.is-leaf {
-      border-color:rgba(239, 176, 0, 1);
+      border: none;
     }
   }
 
   &.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
-    background-color: #f5edd9;
+    background-color: rgb(26, 71, 131);
   }
 
   .el-table__body tr.hover-row > td.el-table__cell {
-    background-color: #f5edd9 !important;
+    background-color: rgb(26, 71, 131) !important;
   }
 
   .el-table__inner-wrapper::before {
@@ -138,20 +137,18 @@
   .btn-prev,
   .el-pager li,
   .el-input__wrapper {
-    background-color: white;
+    background-color: #143763;
     box-shadow: 0 0 0 1px #1a4374;
-    color: #444;
+    color: rgba(255, 255, 255, 0.5);
     margin: 0 2px;
     box-sizing: border-box;
-    &:hover {
-      color:rgba(239, 176, 0, 1);
-    }
+  }
+  .el-input__inner {
+    color: rgba(255, 255, 255, 0.5);
   }
 
   .el-pager li:not(.is-disabled).is-active {
-    box-shadow: 0 0 0 1px rgba(239, 176, 0, 1);
-    background-color: rgba(239, 176, 0, 1);
-    color: white;
+    box-shadow: unset;
   }
 
   .el-pagination__sizes {

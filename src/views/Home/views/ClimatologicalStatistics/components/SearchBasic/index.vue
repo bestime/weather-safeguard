@@ -70,7 +70,7 @@ onMounted(async function () {
   box-sizing: border-box;
   background-color: rgba(34, 34, 34, 1);
   border-radius: 0 4px 4px 4px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.6);
+  box-shadow: 2px 0 3px rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
   .sb-title {
